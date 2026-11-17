@@ -8,8 +8,6 @@
 
 ---
 
-- [ ] **Project skeleton** · P0 · S. FastAPI app with the `core/`, `tools/`, `channels/`, `domains/` layout, one
-  health endpoint, a test runner, a linter and a CI job that runs both; their commands go into `CLAUDE.md`.
 - [ ] **Bakery product schema** · P0 · M. Product types, their sizes, fillings and lead times, and the required
   order fields per type (a custom cake: date, weight, filling, inscription, pickup or delivery, phone). Everything
   below builds on it.

@@ -22,17 +22,25 @@ These override any task instruction. Code and reviews cite them by number.
 
 | Path | What |
 |---|---|
-| `core/` | agent loop, system prompt, guardrails, classifier |
-| `tools/` | catalog, cart, date availability, orders, human handoff |
-| `channels/<name>/` | one adapter per messenger, mapping its messages to the common message type |
-| `domains/<shop>/` | catalog, required fields per product type, persona |
+| `mezbon/main.py` | FastAPI app |
+| `mezbon/core/` | agent loop, system prompt, guardrails, classifier |
+| `mezbon/tools/` | catalog, cart, date availability, orders, human handoff |
+| `mezbon/channels/<name>/` | one adapter per messenger, mapping its messages to the common message type |
+| `mezbon/domains/<shop>/` | catalog, required fields per product type, persona |
+| `tests/` | pytest suite, scripted conversations included |
 
-`core/` and `tools/` never import a channel SDK or name a shop: a new messenger is a new adapter, a new shop a new
+A subpackage is created with its first module. `core/` and `tools/` never import a channel SDK or name a shop: a new messenger is a new adapter, a new shop a new
 domain.
 
 ## Commands
 
-No code yet: the project skeleton item in `docs/backlog/must-have.md` adds run, test and lint here.
+Python and dependencies come from `uv` (`.python-version`, `uv.lock`); never `pip install`.
+
+```bash
+uv sync                                      # install
+uv run fastapi dev                           # dev server, entrypoint in pyproject.toml
+uv run ruff check && uv run ruff format --check && uv run pytest   # the CI gate, same commands
+```
 
 ## Conventions
 
