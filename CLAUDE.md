@@ -32,10 +32,13 @@ domain.
 
 ## Commands
 
-No code yet. The stack (Python with FastAPI, or Kotlin with Spring) is the owner's call: settle it before the first
-source file, then list run, test and lint here.
+No code yet: the project skeleton item in `docs/backlog/must-have.md` adds run, test and lint here.
 
 ## Conventions
+
+- Python with FastAPI.
+- Backlog lives in `docs/backlog/{must-have,should-have,could-have,polish}.md`, one file per tier, created when its
+  first item lands; completed items are deleted.
 
 - The agent answers in the customer's language and script; no translation layer, no hardcoded language list.
 - Keep replies short: WhatsApp bills each free-form reply past 1,000 per number per month.
